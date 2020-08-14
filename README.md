@@ -1,4 +1,9 @@
-<<<<<<< HEAD
+# Face Brain
+
+Detect faces in submitted url's. Provides user login.
+
+## React
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
