@@ -9,6 +9,8 @@ import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
 import Rank from "./components/Rank/Rank";
 import "./App.css";
 
+const backEndUrl = "https://infinite-castle-37265.herokuapp.com";
+
 const particlesOptions = {
   particles: {
     number: {
@@ -94,7 +96,7 @@ class App extends Component {
   onPictureSubmit = () => {
     this.setState({ imageUrl: this.state.input });
     console.log("onPictureSubmit ->", this.state.input);
-    fetch("http://localhost:3001/imageurl", {
+    fetch(backEndUrl + "/imageurl", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -106,7 +108,7 @@ class App extends Component {
         console.log("response from imageUrl ===>", response);
         if (response) {
           console.log("Clarifai response -> ", response);
-          fetch("http://localhost:3001/image", {
+          fetch(backEndUrl + "/image", {
             method: "put",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
